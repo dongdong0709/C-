@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main(）{
+    int n=1234;
+    int remain;//每次留下的余数
+    int reverse=0;
+    while(1){
+        remain=n%10;
+        reverse=10*reverse+remain;
+        n=n/10;
+        if(n==0){
+            break;
+        }
+    }
+    printf("%d\n",reverse);
+}
+
+    
+   
