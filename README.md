@@ -1,5 +1,1 @@
-# C-
-#include<studio.h>
-int main(){
-    printf("hello world");
-}
+复试C语言上机的练习代码
