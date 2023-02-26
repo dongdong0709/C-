@@ -1,0 +1,28 @@
+#include<stdio.h>
+int arr[1000][3000];//定义一个全局的数组———申请一个很大的内存空间，将图形存下来
+int main(){
+    int h;
+    scanf("%d",&h);
+    //将区域全部填上空格
+    for(int i=0;i<h;i++){
+        for(int j=0;j<3*h-2;j++){
+            arr[i][j]=' ';
+        }
+    }
+    int beg=0;
+    //填充梯形区域
+    for(int i=h-1;i>=0;i--){
+        //从下往上填充
+        for(int j=beg;j<3*h-2;++j){
+            arr[i][j]='*';//单个字符用单引号
+        }
+        beg=beg+2;
+    }
+    //最后打印，测试打印的结果
+    for(int i=0;i<h;i++){
+        for(int j=0;j<3*h-2;j++){
+            printf("%c",arr[i][j]);
+        }
+        printf("\n");
+    }
+}
