@@ -1,0 +1,60 @@
+#include<stdio.h>
+#include<stdbool.h>
+int arr[1000][1000];
+int main(){
+    int n;// n是外框的长度
+    char inner,outter;//内和外的花色
+    bool flag=true;//flag用来判断是否是第一个结果
+    while(scanf("%d %c %c\n",&n,&inner,&outter)!=EOF){//输入一个个三元组
+        //处理空行的显示
+        if(flag==true){
+            flag=false;
+        }
+        else{
+            printf("\n");
+        }
+        //scanf %d————整数 %f————浮点数 %o————八进制数   忽略空白字符
+        //scanf %c————字符   可以读取空白字符（空格和换行都是可以读取到的）
+        //scanf %c————如果前面有空格，可以忽略空白字符
+        //printf("n=%d,inner=%c,outter=%c\n",n,inner,outter);
+        char pattern[80][80]={0};//二维数组的长度要固定
+        //在定义二维数组时，可以进行初始化
+        int init=n/2;//第一个点的下标
+        int length=1;//外框的长度
+        int x,y;//横坐标和纵坐标
+        char curchar=inner;//最开始用来填充的花色
+        for(length=1,x=n/2,y=n/2;length<=n;length+=2,--x,--y){
+            //x和y是起点的下标
+            //填满一个长度为length的正方形
+            for(int i=x,j=y;i<x+length;++i){//填上边 y不变，x：x~x+length-1
+                pattern[i][j]=curchar;
+            }
+            for(int i=x,j=y;j<y+length;++j){//填左边 x不变，y：y~y+length-1
+                pattern[i][j]=curchar;
+            }
+            for(int i=x+length-1,j=y;j<y+length;++j){//填底边
+                pattern[i][j]=curchar;
+            }
+            for(int i=x,j=y+length-1;i<x+length;++i){//填右边
+                pattern[i][j]=curchar;
+            }
+            //更换花色
+            if(curchar==inner){
+                curchar=outter;
+            }
+            else{
+                curchar=inner;
+            }
+        }
+        //磨掉四个角
+        if(n!=1){
+            pattern[0][0]=' ';
+            pattern[0][n-1]=' ';
+            pattern[n-1][0]=' ';
+            pattern[n-1][n-1]=' ';
+        }
+        for(int i=0;i<n;i++){
+            printf("%s\n",pattern[i]);
+        }
+    }
+}
