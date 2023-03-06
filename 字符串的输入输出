@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+	char str[100];
+
+	printf("input string1 : \n");
+	scanf("%s", str);//scanf(“%s”,str)默认以空格分隔
+	printf("output:%s\n", str);//输出字符串的时候，空格之后就不输出了
+
+	return 0;
+}
