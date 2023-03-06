@@ -1,0 +1,13 @@
+//#include <string.h>
+//size_t strlen(const char* s);
+////功能：计算指定指定字符串s的长度，不包含字符串结束符‘\0’
+////参数：
+////		s：字符串首地址
+////返回值：字符串s的长度，size_t为unsigned int类型
+
+#include<stdio.h>
+int main() {
+	char str[] = "abc\0defg";
+	int n = strlen(str);
+	printf("n = %d\n", n);
+}
