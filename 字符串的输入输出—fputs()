@@ -1,0 +1,16 @@
+//#include <stdio.h>
+//int fputs(const char* str, FILE* stream);
+////功能：将str所指定的字符串写入到stream指定的文件中， 字符串结束符 '\0'  不写入文件。
+////参数：
+////		str：字符串
+////		stream：文件指针，如果把字符串输出到屏幕，固定写为stdout
+////返回值：
+////		成功：0
+////		失败： - 1
+
+#include<stdio.h>
+int main() {
+	printf("hello world");
+	puts("hello world");
+	fputs("hello world", stdout);//fputs()是puts()的文件操作版本，但fputs()不会自动输出一个'\n'。
+}
