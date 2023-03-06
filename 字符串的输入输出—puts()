@@ -1,0 +1,18 @@
+//#include <stdio.h>
+//int puts(const char* s);
+////功能：标准设备输出s字符串，在输出完成后自动输出一个'\n'。
+////参数：
+////		s：字符串首地址
+////返回值：
+////		成功：非负数
+////		失败： - 1
+
+#include <stdio.h>
+
+int main()
+{
+	printf("hello world");
+	puts("hello world");
+
+	return 0;
+}
