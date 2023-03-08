@@ -1,0 +1,16 @@
+//#include <string.h>
+//char* strcpy(char* dest, const char* src);
+////功能：把src所指向的字符串复制到dest所指向的空间中，'\0'也会拷贝过去
+////参数：
+////		dest：目的字符串首地址
+////		src：源字符首地址
+////返回值：
+////		成功：返回dest字符串的首地址
+////		失败：NULL
+#include<stdio.h>
+int main() {
+	char dest[20] = "123456789";
+	char src[] = "hello world";
+	strcpy(dest, src);//拷贝过去，覆盖原来的
+	printf("%s\n", dest);
+}
