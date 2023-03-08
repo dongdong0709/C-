@@ -1,0 +1,20 @@
+//#include <string.h>
+//char* strtok(char* str, const char* delim);
+////功能：来将字符串分割成一个个片段。
+////		当strtok()在参数s的字符串中发现参数delim中包含的分割字符时, 则会将该字符改为\0 字符，当连续出现多个时只替换第一个为\0。
+////参数：
+////		str：指向欲分割的字符串
+////		delim：为分割字符串中包含的所有字符
+////返回值：
+////		成功：分割后字符串首地址
+////		失败：NULL
+#include<stdio.h>
+int main() {
+	char a[100] = "adc*fvcv*ebcy*hghbdfg*casdert";
+	char* s = strtok(a, "*");//将"*"分割的子串取出
+	while (s != NULL)
+	{
+		printf("%s\n", s);
+		s = strtok(NULL, "*");
+	}
+}
