@@ -1,0 +1,17 @@
+//#include <stdio.h>
+//int sscanf(const char* str, const char* format, ...);
+////功能：从str指定的字符串读取数据，并根据参数format字符串来转换并格式化数据。
+////参数：
+////		str：指定的字符串首地址
+////		format：字符串格式，用法和scanf()一样
+////返回值：
+////		成功：参数数目，成功转换的值的个数
+////		失败： - 1
+#include<stdio.h>
+int main() {
+	char src[] = "a=10, b=20";
+	int a;
+	int b;
+	sscanf(src, "a=%d,  b=%d", &a, &b);
+	printf("a:%d, b:%d\n", a, b);
+}
