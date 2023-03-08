@@ -1,0 +1,21 @@
+//#include <stdio.h>
+//int sprintf(char* str, const char* format, ...);
+////功能：根据参数format字符串来转换并格式化数据，然后将结果输出到str指定的空间中，直到出现字符串结束符 '\0'  为止。
+////参数：
+////		str：字符串首地址
+////		format：字符串格式，用法和printf()一样
+////返回值：
+////		成功：实际格式化的字符个数
+////		失败： - 1
+#include<stdio.h>
+int main() {
+	char dst[100] = { 0 };
+	int a = 10;
+	char src[] = "hello world";
+	printf("a = %d, src = %s", a, src);
+	printf("\n");
+
+	int len = sprintf(dst, "a = %d, src = %s", a, src);
+	printf("dst = \" %s\"\n", dst);
+	printf("len = %d\n", len);
+}
