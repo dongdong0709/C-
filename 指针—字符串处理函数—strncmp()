@@ -1,0 +1,29 @@
+//#include <string.h>
+//int strncmp(const char* s1, const char* s2, size_t n);
+////功能：比较 s1 和 s2 前n个字符的大小，比较的是字符ASCII码大小。
+////参数：
+////		s1：字符串1首地址
+////		s2：字符串2首地址
+////		n：指定比较字符串的数量
+////返回值：
+////		相等：0
+////		大于： > 0
+////		小于： < 0
+#include<stdio.h>
+int main() {
+	char* str1 = "hello world";
+	char* str2 = "hello mike";
+
+	if (strncmp(str1, str2, 5) == 0)
+	{
+		printf("str1==str2\n");
+	}
+	else if (strcmp(str1, "hello world") > 0)
+	{
+		printf("str1>str2\n");
+	}
+	else
+	{
+		printf("str1<str2\n");
+	}
+}
