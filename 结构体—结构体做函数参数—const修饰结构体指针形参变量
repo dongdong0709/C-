@@ -1,0 +1,52 @@
+#include<stdio.h>
+//结构体类型的定义
+struct stu
+{
+	char name[50];
+	int age;
+};
+
+void fun1(struct stu* const p)
+{
+	//p = NULL; //err
+	p->age = 10; //ok
+}
+
+//void fun2(struct stu const*  p)
+void fun2(const struct stu* p)
+{
+	p = NULL; //ok
+	//p->age = 10; //err
+}
+
+void fun3(const struct stu* const p)
+{
+	//p = NULL; //err
+	//p->age = 10; //err
+}
+int main() {
+	struct stu stu1 = { "孙悟空",18 };
+	struct stu stu2 = { "猪八戒",19 };
+	////const修饰结构体指针类型
+	//const struct stu* p = &stu1;
+
+	////改变结构体变量的值是可以的——可以改变指向
+	//p = &stu2;//OK
+
+	////但是无法改变结构体指针所指向的内存空间的值
+	////p->age = 20;//err表达式必须是可修改的左值
+	////(*p).age = 20;//err
+
+	////const修饰结构体指针变量
+	//struct stu* const p = &stu1;
+
+	////p = &stu2;//err表达式必须是可修改的左值——无法改变指向
+	//p->age = 20;
+	//strcpy(p->name, "唐僧");//改字符串一定要用这种形式
+
+	//const修饰结构体指针类型和结构体指针变量
+	const struct stu* const p = &stu1;
+	//p = &stu2;//err
+	//p->age = 20;//err
+	
+}
