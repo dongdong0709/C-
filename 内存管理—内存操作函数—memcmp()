@@ -1,0 +1,19 @@
+//#include <string.h>
+//int memcmp(const void* s1, const void* s2, size_t n);
+////功能：比较s1和s2所指向内存区域的前n个字节
+////参数：
+////		s1：内存首地址1
+////		s2：内存首地址2
+////		n：需比较的前n个字节
+////返回值：
+////		相等： = 0
+////		大于： > 0
+////		小于： < 0
+#include<stdio.h>
+int main() {
+	int a[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+	int b[10] = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+	int flag = memcmp(a, b, sizeof(a));
+	printf("flag = %d\n", flag);
+}
