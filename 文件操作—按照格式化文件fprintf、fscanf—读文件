@@ -1,0 +1,17 @@
+#include <stdio.h>
+int fscanf(FILE* stream, const char* format, ...);
+//功能：从stream指定的文件读取字符串，并根据参数format字符串来转换并格式化数据。
+//参数：
+//		stream：已经打开的文件
+//		format：字符串格式，用法和scanf()一样
+//返回值：
+//		成功：参数数目，成功转换的值的个数
+//		失败： - 1
+
+int main() {
+	int a = 0;
+	int b = 0;
+	int c = 0;
+	fscanf(fp, "%d %d %d\n", &a, &b, &c);
+	printf("a = %d, b = %d, c = %d\n", a, b, c);
+}
