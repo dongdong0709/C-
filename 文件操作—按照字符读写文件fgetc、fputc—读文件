@@ -1,0 +1,26 @@
+#include <stdio.h>
+//int fgetc(FILE* stream);
+//功能：从stream指定的文件中读取一个字符
+//参数：
+//		stream：文件指针
+//返回值：
+//		成功：返回读取到的字符
+//		失败： - 1
+
+int main() {
+	char ch;
+#if 0
+	while ((ch = fgetc(fp)) != EOF)
+	{
+		printf("%c", ch);
+	}
+	printf("\n");
+#endif
+
+	while (!feof(fp)) //文件没有结束，则执行循环
+	{
+		ch = fgetc(fp);
+		printf("%c", ch);
+	}
+	printf("\n");
+}
