@@ -1,0 +1,25 @@
+#include <stdio.h>
+//char* fgets(char* str, int size, FILE* stream);
+//功能：从stream指定的文件内读入字符，保存到str所指定的内存空间，直到出现换行字符、读到文件结尾或是已读了size - 1个字符为止，
+//		最后会自动加上字符 '\0' 作为字符串结束。
+//参数：
+//		str：字符串
+//		size：指定最大读取字符串的长度（size - 1）
+//		stream：文件指针
+//返回值：
+//		成功：成功读取的字符串
+//		读到文件尾或出错： NULL
+
+int main() {
+	char buf[100] = 0;
+
+	while (!feof(fp)) //文件没有结束
+	{
+		memset(buf, 0, sizeof(buf));
+		char* p = fgets(buf, sizeof(buf), fp);
+		if (p != NULL)
+		{
+			printf("buf = %s", buf);
+		}
+	}
+}
