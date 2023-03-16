@@ -1,0 +1,13 @@
+#include <stdio.h>
+int fprintf(FILE* stream, const char* format, ...);
+//功能：根据参数format字符串来转换并格式化数据，然后将结果输出到stream指定的文件中，指定出现字符串结束符 '\0'  为止。
+//参数：
+//		stream：已经打开的文件
+//		format：字符串格式，用法和printf()一样
+//返回值：
+//		成功：实际写入文件的字符个数
+//		失败： - 1
+
+int main() {
+	fprintf(fp, "%d %d %d\n", 1, 2, 3);
+}
