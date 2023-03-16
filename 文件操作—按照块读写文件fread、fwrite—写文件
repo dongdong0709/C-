@@ -1,0 +1,29 @@
+#include <stdio.h>
+size_t fwrite(const void* ptr, size_t size, size_t nmemb, FILE* stream);
+//功能：以数据块的方式给文件写入内容
+//参数：
+//		ptr：准备写入文件数据的地址
+//		size： size_t 为 unsigned int类型，此参数指定写入文件内容的块数据大小
+//		nmemb：写入文件的块数，写入文件数据总大小为：size* nmemb
+//		stream：已经打开的文件指针
+//返回值：
+//		成功：实际成功写入文件数据的块数目，此值和 nmemb 相等
+//		失败：0
+
+typedef struct Stu
+{
+	char name[50];
+	int id;
+}Stu;
+int main() {
+	Stu s[3];
+	int i = 0;
+	for (i = 0; i < 3; i++)
+	{
+		sprintf(s[i].name, "stu%d%d%d", i, i, i);
+		s[i].id = i + 1;
+	}
+
+	int ret = fwrite(s, sizeof(Stu), 3, fp);
+	printf("ret = %d\n", ret);
+}
