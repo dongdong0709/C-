@@ -1,0 +1,15 @@
+//#include <stdio.h>
+//int fclose(FILE* stream);
+////功能：关闭先前fopen()打开的文件。此动作让缓冲区的数据写入文件中，并释放系统所提供的文件资源。
+////参数：
+////		stream：文件指针
+////返回值：
+////		成功：0
+////		失败： - 1
+
+#include<stdio.h>
+int main() {
+	FILE* fp = NULL;
+	fp = fopen("abc.txt", "r");
+	fclose(fp);
+}
